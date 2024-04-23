@@ -1,0 +1,8 @@
+tenure1 <- c(5.96,8.84,8.03,7.29,11.48,10.68,9.49,8.51,9.58,8.15)
+tenure1
+t.test(tenure1,alternative = "two.sided", conf.level = 0.90)
+t.test(tenure1,alternative = "two.sided", conf.level = 0.95)
+t.test(tenure1,alternative = "two.sided", conf.level = 0.99)
+setwd()
+getwd()
+save.image("C:\\Users\\Sarah\\Documents\\My R Files\\lab3_w17")

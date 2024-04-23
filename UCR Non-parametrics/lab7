@@ -1,0 +1,8 @@
+insur1 <-matrix(c(7,3,4,6),nrow=2, ncol=2, byrow = TRUE)
+insur1
+fisher.test(insur1)
+family1<-matrix(c(28,54,78,23,29,75,90,73,10,31,69,57,15,19,40,32),nrow=4,ncol=4,byrow=TRUE)
+family1
+chisq.test(family1)
+save.image("C:\\Users\\Sarah\\Documents\\My R Files\\lab 7")
+save.image("C:\\Users\\Sarah\\Documents\\My R Files\\lab_7")

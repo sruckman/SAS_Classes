@@ -1,0 +1,11 @@
+wait<-read.table("C:\\Users\\Sarah\\Downloads\\WAITING_TIME_140.DAT", header = TRUE)
+wait
+attach(wait)
+names(wait)
+wilcox.test(time,mu=15,alternative="less")
+grocery<-read.table("C:\\Users\\Sarah\\Downloads\\GROCERY_140.dat", header = TRUE)
+grocery
+attach(grocery)
+names(grocery)
+wilcox.test(vons,ralphs,paired=TRUE,alternative="less")
+save.image("C:\\Users\\Sarah\\Documents\\My R Files\\lab11")

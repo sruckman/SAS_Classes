@@ -1,0 +1,81 @@
+options ls=80 nocenter nodate ps=55 nonumber;
+goptions reset=all colors=(blue,red,green,purple)
+	ftitle=swissb ftext=swissb htitle=3;
+	ods graphics off;
+data lab3q1;
+proc iml;
+A = { 1 2, 4 3};
+B = {4,120};
+C = {0.5 1, 1 2};
+print ,,, A B C;
+DET_C = det(C);
+print ,,, C, 'Determinant of C', DET_C;
+if DET_C = 0 then
+do;
+print ,,, 'Since the determinant = 0, the matrix C is singular and does not have an inverse';
+end;
+else
+do;
+CINV = inv(C);
+PROD1 = C*CINV;
+print ,,, 'SInce the determinant is not = 0, the matrix C is non-singular and has an inverse';
+print ,,, C, 'INverse of C', CINV, 'Product CHeck', PROD1;
+end;
+data lab3q1partiv;
+proc iml;
+A = { 1 2, 4 3};
+B = {4,120};
+det_A = det(A);
+print,,, A, 'Determinant of A', det_A;
+if det_A = 0 then 
+do;
+print ,,, 'Since the determinant = 0, the matrix A is singular and does not have an inverse';
+end;
+else
+do;
+AINV = inv(A);
+PRODA = A*AINV;
+print ,,, 'Since the determinant is not = 0, the matrix A is non-singular and has an inverse';
+print ,,, A, 'Inverse of A', AINV, 'Product Check', PRODA;
+SOLN = AINV*B;
+print ,,, 'Solution is ' SOLN;
+SOLN1 = solve(A,B);
+print ,,, 'Solution is ' SOLN1;
+end;
+data lab3q2;
+infile 'C:\Users\sarah\Downloads\avocado.dat' firstobs = 3;
+input day penetrate percentage @@;
+proc print;
+symbol1 value=star
+height = 3
+cv=blue;
+proc gplot;
+title height=2 font = centb color=darkblue 'Scatterplot of Penetration vs Days After Harvest';
+plot penetrate*day/ caxis = darkgreen ctext=darkred;
+proc corr nosimple noprob;
+var day penetrate;
+proc reg;
+model penetrate = day;
+proc reg;
+model penetrate = day /P R;
+output out = lab3a P= pred R=resid Student=stdes;
+proc gplot;
+plot stdes*pred;
+proc univariate data=lab3a normal;
+ods select TestsForNormality;
+var stdes;
+data try2;
+set lab3q2;
+xsq = day**2;
+proc reg;
+model penetrate = day xsq/ P R;
+output out = lab3b P=pred1 R=resid1 Student = stdes1;
+proc gplot data = lab3b;
+title5 'Residual Plot 2';
+plot stdes1*pred1;
+proc univariate data = lab3b normal;
+title5 'Test for Normality';
+ods select TestsForNormality;
+var stdes1;
+run;
+quit;

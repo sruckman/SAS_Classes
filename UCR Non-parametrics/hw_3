@@ -1,0 +1,8 @@
+aussies<-read.table("C:\\Users\\Sarah\\Downloads\\aussies.dat", header=TRUE)
+aussies
+fisher.test(aussies)
+chisq.test(aussies)
+quality1<-read.table("C:\\Users\\Sarah\\Downloads\\quality1s_w17.dat", header=TRUE)
+quality1
+fisher.test(quality1)
+save.image("C:\\Users\\Sarah\\Documents\\My R Files\\hw3")

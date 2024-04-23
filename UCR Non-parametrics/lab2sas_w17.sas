@@ -1,0 +1,55 @@
+options ls=78 nocenter nodate ps=55;
+data norm1;
+title1 'Stats 140, Winter 2017';
+title2 'Lab 2';
+title3 'Sarah Ruckman';
+title4 'Question 1';
+title5 'Part (i)';
+input mu sigma x1 x2;
+z1 = (x1 - mu)/sigma;
+z2 = (x2 - mu)/sigma;
+p1a = probnorm(z2) - probnorm(z1);
+p1b = cdf('Normal',x2,mu,sigma)-cdf('Normal',x1,mu,sigma);
+datalines;
+60 6 48 62
+;
+prroc print noobs;
+run;
+quit;
+data norm3;
+title5 'Part (ii)';
+input mu sigma prob1;
+z = probit(prob1);
+x = mu + z*sigma;
+x1 = quantile('Normal',prob1,mu,sigma);
+datalines;
+60 6 0.96
+;
+proc print noobs;
+run;
+quit;
+data binom1;
+title4 'Question 2';
+title5 'Part (i)';
+input p n x1 x2 x3 x4 x5 x6;
+p1 = pdf('Binom',x1,p,n);
+p2 = cdf('Binom',x2,p,n);
+p3 = 1-cdf('Binom',x3,p,n);
+p3a = sdf('Binom',x3,p,n);
+p4 = 1-cdf('Binom',x4,p,n);
+p5 = cdf('Binom',x5,p,n)-cdf('Binom',x6,p,n);
+p1a=probbnml(p,n,x1) - probbnml(p,n,x4);
+p2a = probbnml(p,n,x2);
+p3b = 1- probbnml(p,n,x3);
+p4a= 1-probbnml(p,n,x4);
+p5a = probbnml(p,n,x5)-probbnml(p,n,x6);
+datalines;
+0.45 20 9 11 10 8 12 7
+;
+proc print noobs;
+var n p p1 p2 p3 p3a p4 p5;
+proc print noobs;
+var n p p1a p2a p3b p4a p5a;
+run;
+quit;
+ 

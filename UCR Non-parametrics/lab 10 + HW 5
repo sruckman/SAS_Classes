@@ -1,0 +1,18 @@
+plant_data<-read.table("C:\\Users\\Sarah\\Downloads\\PLANTW17.DAT", header=TRUE)
+plant_data
+names(plant_data)
+attach(plant_data)
+kruskal.test(plant_data)
+dunn.test(plant_data)
+utils:::menuInstallPkgs()
+dunn.test(plant_data)
+library(dunn.test)
+dunn.test(plant_data)
+dog<-read.table("C:\\Users\\Sarah\\Downloads\\DOGRACE1S.DAT", header=TRUE)
+dog
+names(dog)
+attach(dog)
+kruskal.test(dog)
+library(dunn.test)
+dunn.test(dog)
+save.image("C:\\Users\\Sarah\\Documents\\My R Files\\lab 10 & HW 5")

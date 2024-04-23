@@ -1,0 +1,32 @@
+wait<-read.table("C:\\Users\\Sarah\\Downloads\\WAITING_TIME_140.DAT", header = TRUE)
+wait
+attach(wait)
+names(wait)
+wilcox.test(time,mu=15,alternative="less")
+grocery<-read.table("C:\\Users\\Sarah\\Downloads\\GROCERY_140.dat", header = TRUE)
+grocery
+attach(grocery)
+names(grocery)
+wilcox.test(vons,ralphs,paired=TRUE,alternative="less")
+save.image("C:\\Users\\Sarah\\Documents\\My R Files\\lab11")
+q()
+defect<-read.table("C:\\Users\\Sarah\\Downloads\\defect1_w17.dat", header = TRUE)
+defect
+attach(defect)
+names(defect)
+wilcox.test(Line1, Line2, paired = TRUE)
+library(dunn.test)
+dunn.test(Line1,Line2)
+g<-read.table("C:\\Users\\Sarah\\Downloads\\geyser1d.dat", header = TRUE)
+g
+attach(g)
+names(g)
+wilcox.test(height,mu=86)
+wine<-read.table("C:\\Users\\Sarah\\Downloads\\WINE1D.DAT", header= TRUE)
+wine
+attach(wine)
+names(wine)
+library(stats)
+cor.test(Judge1,Judge2,method="spearman")
+cor.test(Judge1,Judge2,method="kendall")
+save.image("C:\\Users\\Sarah\\Documents\\My R Files\\HW 6")

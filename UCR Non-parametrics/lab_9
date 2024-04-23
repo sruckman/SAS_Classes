@@ -1,0 +1,10 @@
+getwd()
+setwd("C:/Users/Sarah/Documents/My R Files")
+getwd()
+plant_data<-read.table("C:\\Users\\Sarah\\Downloads\\PLANTW17.DAT", header = TRUE)
+plant_data
+names(plant_data)
+attach(plant_data)
+wilcox.test(PlantA,PlantB,correct=FALSE)
+wilcox.test(PlantA,PlantB)
+save.image("C:\\Users\\Sarah\\Documents\\My R Files\\lab9")

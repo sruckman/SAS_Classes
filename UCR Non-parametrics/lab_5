@@ -1,0 +1,32 @@
+wait_data<-read.table("C:\\Users\\Sarah\\Downloads\\WAITING_TIME_140.DAT")
+wait_table
+wait_data
+binom.test(x=9,n=20,a;ternative="less")
+binom.test(x=9,n=20,alternative="less")
+library(BSDA)
+SIGN.test(time,md=15,alternative="less")
+local({pkg <- select.list(sort(.packages(all.available = TRUE)),graphics=TRUE)
+if(nchar(pkg)) library(pkg, character.only=TRUE)})
+utils:::menuInstallPkgs()
+SIGN.test(time,md=15,alternative="less")
+SIGN.test(s=9,md=15,alternative="less")
+SIGN.test(wait_data,md=15,alternative="less")
+grocery_data<-read.table("C:\\Users\\Sarah\\Downloads\\GROCERY_140.dat")
+grocery_data
+grocery_data<-read.table("C:\\Users\\Sarah\\Downloads\\GROCERY_140.dat",header=TRUE)
+grocery_data
+wait_data<-read.table("C:\\Users\\Sarah\\Downloads\\WAITING_TIME_140.DAT",header=TRUE)
+wait_data
+SIGN.test(time,md=15,alternative="less")
+library(BSDA)
+SIGN.test(time,md=15,alternative="less")
+attach(grocery_data)
+names(grocery_data)
+diff1=vons-ralphs
+diff1
+binom.test(x=3,n=10,alternative="less")
+SIGN.test(diff1,md=0,alternative="less")
+attach(wait_data)
+names(wait_data)
+SIGN.test(time,md=15,alternative="less")
+save.image("C:\\Users\\Sarah\\Documents\\My R Files\\lab5")

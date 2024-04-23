@@ -1,0 +1,6 @@
+homes2<-read.table("C:\\Users\\Sarah\\Downloads\\homes1.dat", header =TRUE)
+homes2
+attach(homes2)
+names(homes2)
+utils:::menuInstallPkgs()
+ks.test(A,B)
